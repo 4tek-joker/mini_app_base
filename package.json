@@ -1,0 +1,18 @@
+{
+  "name": "react-native-template-mini-app",
+  "version": "0.0.1",
+  "description": "mini app template",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:4tek-joker/mini_app_base.git"
+  },
+  "license": "MIT",
+  "homepage": "git@github.com:4tek-joker/mini_app_base.git#readme"
+}

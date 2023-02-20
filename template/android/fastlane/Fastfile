@@ -1,0 +1,64 @@
+opt_out_usage
+def root_path
+  Dir.pwd.sub(/.*\Kfastlane/, '').sub(/.*\Kandroid/, '').sub(/.*\Kios/, '').sub(/.*\K\/\//, '')
+end
+
+versionName = 0
+versionCode = 0
+
+lane :sh_on_root do |options|
+  command = options[:command]
+  sh("cd #{root_path}/android && #{command}")
+end
+
+lane :initz do
+  increment_version_code(app_project_dir: '**/app')
+  # increment_version_name(app_project_dir: '**/app')
+  versionName = get_version_name(app_project_dir: '**/app')
+  versionCode = get_version_code(app_project_dir: '**/app')
+end
+
+lane :build_apk do
+    gradle(task: 'clean')
+    sh_on_root(command: "./gradlew app:assembleRelease")
+#     gradle(
+#       task: "assemble",
+#       build_type: "Release"
+#     )
+end
+
+lane :distribute_to_firebase do
+  release_note = "New android build \nVersion Name: #{versionName} \nVersion Code: #{versionCode}"
+  firebase_app_distribution(
+    app: "1:545380132283:android:7d5705d013162a084f109e_REPLACE_HERE",
+    firebase_cli_token:'1//0e6JT0y82bFwhCgYIARAAGA4SNwF-L9IrJH_AN80Hrll0mPvqAGvKoJRbh5l6hdckfuit7CLN0wSVQRNDz5czSarTJOaaLALYgdU_REPLACE_HERE',
+    groups: "Hiko",
+    release_notes: release_note,
+    android_artifact_path: "#{root_path}/android/app/build/outputs/apk/release/app-release.apk"
+  )
+end
+
+lane :notify_to_group do
+  telegram(
+    token: '1952840865:AAFLjRqIbbJ_MqPbGplINcdRI1nhUrS6Ofwd_REPLACE_HERE',
+    chat_id: '-633757539_REPLACE_HERE',
+    text: "ExampleApp: New version APK is deployed! \nVersion Name: #{versionName} \nVersion Code: #{versionCode}"
+  )
+  telegram(
+    token: '1952840865:AAFLjRqIbbJ_MqPbGplINcdRI1nhUrS6Ofw_REPLACE_HERE',
+    chat_id: '-798455147_REPLACE_HERE',
+    text: "ExampleApp: New version APK is deployed! \nVersion Name: #{versionName} \nVersion Code: #{versionCode}"
+  )
+end
+
+default_platform(:android)
+
+platform :android do
+  desc "New Android build for ExampleApp app"
+  lane :androidlane do
+    initz
+    build_apk
+    distribute_to_firebase
+    notify_to_group
+  end
+end
