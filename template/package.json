@@ -17,6 +17,7 @@
     "react-native-super-app-sdk": "git+https://github.com/4tek-group/sdk_supper_app.git"
   },
   "devDependencies": {
+    "axios": "^0.27.2",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@callstack/repack": "^3.0.0",

@@ -49,8 +49,45 @@ File bundle upload to supper app are ProjectName.container.bundle and src_Projec
 
 2. Ios
 ```
-1. cd [project]
+1. cd ProjectName
 2. yarn build-ios
 ```
 The release bundle for your app is created at ProjectName/build/outputs/ios/remotes/
 File bundle upload to supper app are ProjectName.container.bundle and src_ProjectName_js.chunk.bundle
+
+### :rocket: Config env upload app bundle to store
+
+Check config in ProjectName/upload_config_dev.json and ProjectName/upload_config_pro.json
+
+### :rocket: Upload app bundle to store
+#### From the command line:
+1. Android dev
+```
+1. cd ProjectName
+2. yarn upload -platform android
+```
+2. Android prod
+```
+1. cd ProjectName
+2. yarn upload -platform android --prod
+```
+
+
+3. Ios dev
+```
+1. cd ProjectName
+2. yarn upload -platform ios
+```
+3. Ios prod
+```
+1. cd ProjectName
+2. yarn upload -platform ios --prod
+```
+
+IF upload file is error: /bin/sh: ./upload.js: Permission denied then run commanline: 
+
+```
+1. cd ProjectName
+2. chmod +x ./upload.js
+```
+And reupload.
