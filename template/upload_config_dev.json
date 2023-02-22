@@ -1,8 +1,0 @@
-{
-    "REACT_APP_UPLOAD_URL": "http://super-app-api.mooo.com/",
-    "appCode": "004",
-    "appName": "ProjectName",
-    "containerName": "ProjectName",
-    "app_module": "./App",
-    "version": 4
-}
