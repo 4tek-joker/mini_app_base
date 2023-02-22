@@ -11,27 +11,45 @@ const chunk_name = 'src_ProjectName_js.chunk.bundle'
 
 let platform = 'ios'
 let env = 'dev'
+let version = 0
+const appCode = '000'
+
+if (appCode === '000') {
+  console.error(
+    'Error: Sai app code, Vui lòng đổi app code trong upload.js!)',
+  )
+  return
+}
 
 process.argv.forEach(function (val, index, array) {
   if (val === '-platform') {
     platform = array[index + 1]
   } else if (val === '--prod') {
     env = 'prod'
+  } else if (val === '-version') {
+    version = array[index + 1]
   }
 })
+
+if (version === 0) {
+  console.error(
+    'Error: Thiếu version code. Vui lòng thử lại!)',
+  )
+  return
+}
 
 const callApi = filePath => {
   const {
     REACT_APP_UPLOAD_URL,
-    appCode,
     appName,
     containerName,
     app_module,
-    version,
-  } =
-    env === 'prod'
-      ? require('./upload_config_prod.json')
-      : require('./upload_config_dev.json')
+  } = {
+    "REACT_APP_UPLOAD_URL": env === 'prod' ? "http://super-app-api.mooo.com/" : "http://super-app-api.mooo.com/",
+    "appName": "ProjectName",
+    "containerName": "ProjectName",
+    "app_module": "./App",
+}
   data.append('files', fs.createReadStream(`${filePath}${container_name}`))
   data.append('files', fs.createReadStream(`${filePath}${chunk_name}`))
   data.append('appCode', appCode)

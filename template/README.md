@@ -57,31 +57,32 @@ File bundle upload to supper app are ProjectName.container.bundle and src_Projec
 
 ### :rocket: Config env upload app bundle to store
 
-Check config in ProjectName/upload_config_dev.json and ProjectName/upload_config_pro.json
+Check config in ProjectName/upload.js
+Please change appCode before when upload app
 
 ### :rocket: Upload app bundle to store
 #### From the command line:
 1. Android dev
 ```
 1. cd ProjectName
-2. yarn upload -platform android
+2. yarn upload -platform android -version 1
 ```
 2. Android prod
 ```
 1. cd ProjectName
-2. yarn upload -platform android --prod
+2. yarn upload -platform android -version 1 --prod
 ```
 
 
 3. Ios dev
 ```
 1. cd ProjectName
-2. yarn upload -platform ios
+2. yarn upload -platform ios -version 1
 ```
 3. Ios prod
 ```
 1. cd ProjectName
-2. yarn upload -platform ios --prod
+2. yarn upload -platform ios -version 1 --prod
 ```
 
 IF upload file is error: /bin/sh: ./upload.js: Permission denied then run commanline: 
