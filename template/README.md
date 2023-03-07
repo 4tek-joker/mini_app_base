@@ -72,17 +72,62 @@ Please change appCode before when upload app
 1. cd ProjectName
 2. yarn upload -platform android -version 1 --prod
 ```
+3. Android prod obfuscation
+```
+1. cd ProjectName
+2. yarn upload -platform android -version 1 --prod --ob
+```
 
 
-3. Ios dev
+4. Ios dev
 ```
 1. cd ProjectName
 2. yarn upload -platform ios -version 1
 ```
-3. Ios prod
+5. Ios prod
 ```
 1. cd ProjectName
 2. yarn upload -platform ios -version 1 --prod
+```
+6. Ios prod obfuscation
+```
+1. cd ProjectName
+2. yarn upload -platform ios -version 1 --prod --ob
+```
+
+## Note obfuscation options defaut: 
+```
+{
+    compact: true,
+    controlFlowFlattening: true,
+    controlFlowFlatteningThreshold: 1,
+    deadCodeInjection: true,
+    deadCodeInjectionThreshold: 1,
+    debugProtection: true,
+    debugProtectionInterval: 4000,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: 'hexadecimal',
+    log: false,
+    numbersToExpressions: true,
+    renameGlobals: false,
+    selfDefending: true,
+    simplify: true,
+    splitStrings: true,
+    splitStringsChunkLength: 5,
+    stringArray: true,
+    stringArrayCallsTransform: true,
+    stringArrayEncoding: ['rc4'],
+    stringArrayIndexShift: true,
+    stringArrayRotate: true,
+    stringArrayShuffle: true,
+    stringArrayWrappersCount: 5,
+    stringArrayWrappersChainedCalls: true,    
+    stringArrayWrappersParametersMaxCount: 5,
+    stringArrayWrappersType: 'function',
+    stringArrayThreshold: 1,
+    transformObjectKeys: true,
+    unicodeEscapeSequence: false
+}
 ```
 
 IF upload file is error: /bin/sh: ./upload.js: Permission denied then run commanline: 
