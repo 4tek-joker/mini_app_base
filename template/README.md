@@ -129,11 +129,37 @@ Please change appCode before when upload app
     unicodeEscapeSequence: false
 }
 ```
+### :rocket: Run test mini app
+#### From the command line:
+1. Run app test android
+```
+1. cd ProjectName
+2. yarn run:test --platform android
+```
+2. Start server test mini app
+```
+1. cd ProjectName
+2. yarn start:test --port 8081
+```
+3. Scan qrcode or input information server test in supper app dev android
 
-IF upload file is error: /bin/sh: ./upload.js: Permission denied then run commanline: 
+
+4. Run app test ios
+```
+1. cd ProjectName
+2. yarn run:test --platform ios
+```
+5. Ios prod
+```
+1. cd ProjectName
+2. yarn start:test --port 8081
+```
+6. Scan qrcode or input information server test in supper app dev ios
+
+IF upload file is error: /bin/sh: ./upload.js | run.js | start.sh: Permission denied then run commanline: 
 
 ```
 1. cd ProjectName
-2. chmod +x ./upload.js
+2. chmod +x ./upload.js | run.js | start.sh
 ```
 And reupload.
