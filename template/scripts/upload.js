@@ -17,10 +17,10 @@ const chunk_name_ob = 'src_ProjectName_js-obfuscated.chunk.js'
 let platform = 'ios'
 let env = 'dev'
 let version = 0
-const appCode = '000'
+const appId = '000'
 let isObfuscator = false
 
-if (appCode === '000') {
+if (appId === '000') {
   console.error(
     '❌ Error: Sai app code, Vui lòng đổi app code trong upload.js!)',
   )
@@ -113,7 +113,7 @@ const callApi = filePath => {
   }
   data.append('files', fs.createReadStream(`${filePath}${container_name}`))
   data.append('files', fs.createReadStream(`${filePath}${chunk_name}`))
-  data.append('appCode', appCode)
+  data.append('appId', appId)
   data.append('appName', appName)
   data.append('containerName', containerName)
   data.append('module', app_module)
