@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native'
-import { AppText } from 'react-native-super-app-sdk'
+import { AppText } from 'react-native-4tek-component-kit'
 
 function Main() {
   return (
