@@ -147,7 +147,12 @@ export default env => {
             eager: true,
             requiredVersion: '0.0.1',
           },
-        }
+          'react-native-4tek-component-kit': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '0.1.0',
+          },
+        },
       }),
     ],
   }

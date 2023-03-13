@@ -17,7 +17,8 @@
   "dependencies": {
     "react": "18.0.0",
     "react-native": "0.69.3",
-    "react-native-super-app-sdk": "git+https://github.com/4tek-group/sdk_supper_app.git"
+    "react-native-super-app-sdk": "git+https://github.com/4tek-group/sdk_supper_app.git",
+    "react-native-4tek-component-kit": "git+https://github.com/4tek-group/4tek_component_rn_kit.git"
   },
   "devDependencies": {
     "axios": "^0.27.2",
@@ -37,14 +38,31 @@
     "husky": "^8.0.1",
     "metro-react-native-babel-preset": "^0.72.1",
     "qrcode-terminal": "^0.12.0",
+    "react-native-webview": "11.23.1",
     "react-test-renderer": "18.1.0",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "5.75.0",
     "@types/react-native": "^0.70.4",
-    "webpack-cli": "^4.10.0"
+    "@react-native-community/blur": "4.3.0",
+    "@react-native-masked-view/masked-view": "0.2.8",
+    "@shopify/flash-list": "1.4.1",
+    "i18next": "^22.4.11",
+    "mobx": "^6.8.0",
+    "mobx-react-lite": "3.4.2",
+    "react-i18next": "^12.2.0",
+    "react-native-blurhash": "1.1.10",
+    "react-native-fast-image": "8.6.3",
+    "react-native-linear-gradient": "2.6.2",
+    "react-native-spinkit": "1.5.1",
+    "react-native-svg": "13.8.0",
+    "webpack-cli": "^4.10.0",
+    "@react-navigation/native": "6.0.11",
+    "moment": "2.29.4",
+    "react-native-calendar-picker": "7.1.2",
+    "react-native-dropdown-picker": "5.4.2",
+    "react-native-gesture-handler": "2.6.1"
   },
   "jest": {
     "preset": "react-native"
   }
 }
-  
